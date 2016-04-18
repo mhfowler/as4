@@ -1,0 +1,20 @@
+{
+  "name": "AS4",
+  "version": "1.0.2",
+  "description": "A variety of UI improvements for Twitter.",
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "css": ["css/kms_twitter.css"],
+    "js": ["js/vendor.js", "js/main.js"],
+    "run_at": "document_start"
+  }],
+  "icons": {
+    "48": "assets/images/icon48.png",
+    "128": "assets/images/icon128.png"
+ },
+ "web_accessible_resources": [
+     "assets/images/star-filled.png",
+     "assets/images/star.png"
+  ],
+  "manifest_version": 2
+}

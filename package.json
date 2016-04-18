@@ -1,0 +1,50 @@
+{
+  "name": "AS4",
+  "version": "0.1.0",
+  "description": "google chrome extension with twitter ui improvements",
+  "main": "dist/assets/js/main.js",
+  "config": {
+    "src": {
+      "scripts": "src/scripts",
+      "style": "src/style",
+      "assets": "src/assets"
+    },
+    "dist": {
+      "scripts": "dist/js",
+      "style": "dist/css",
+      "assets": "dist/assets"
+    }
+  },
+  "scripts": {
+    "build:vendor": "mkdir -p $npm_package_config_dist_scripts & browserify -r lodash -r jquery -r jss-browserify -o $npm_package_config_dist_scripts/vendor.js",
+    "build:js": "mkdir -p $npm_package_config_dist_scripts & browserify --debug -x jss-browserify -x lodash $npm_package_config_src_scripts/main.js -o $npm_package_config_dist_scripts/main.js",
+    "watch:js": "mkdir -p $npm_package_config_dist_scripts & watchify --debug -x lodash -x jquery -x jss-browserify $npm_package_config_src_scripts/main.js -o $npm_package_config_dist_scripts/main.js",
+    "build:css": "mkdir -p $npm_package_config_dist_style & stylus -m -o dist/css src/style",
+    "watch:css": "mkdir -p $npm_package_config_dist_style & stylus -m -o dist/css src/style -w",
+    "build:assets": "mkdir -p $npm_package_config_dist_assets & cp -rf $npm_package_config_src_assets dist/",
+    "build:manifest": "mkdir -p dist & cp src/manifest.json dist",
+    "build:all": "npm run build:vendor & npm run build:js & npm run build:css & npm run build:assets & npm run build:manifest",
+    "build": "npm run build:js & npm run build:css",
+    "watch": "npm run watch:js & npm run watch:css",
+    "clean:js": "rm -rf $npm_package_config_dist_scripts/main.js",
+    "clean:css": "rm -rf $npm_package_config_dist_style",
+    "clean:assets": "rm -rf $npm_package_config_dist_assets",
+    "clean": "rm -rf dist"
+  },
+  "author": "David Isaac Lee <david@david-lee.net> (http://david-lee.net/)",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "stylus": "^0.52.4",
+    "watchify": "^3.4.0"
+  },
+  "dependencies": {
+    "JSONStream": "^1.1.1",
+    "jquery": "^2.1.4",
+    "jss-browserify": "^0.6.0",
+    "lodash": "^3.10.1",
+    "mousetrap": "^1.5.3",
+    "stylus": "^0.54.2",
+    "through2": "^2.0.1"
+  }
+}
