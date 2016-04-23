@@ -2,28 +2,33 @@ var Configuration = {
   default: Object.freeze({
     Hotkeys: [
       {
-        key: 'd',
-        module: 'DirectMessages',
-        action: 'toggleVisible'
+        key: 'command+e',
+        module: 'NoteModal',
+        action: 'showNoteModal'
       },
       {
-        key: 'l',
-        module: 'User',
-        action: 'navigateToLists'
+        key: 'command+s',
+        module: 'NoteModal',
+        action: 'saveNoteAction'
+      },
+      {
+        key: 'command+shift+4',
+        module: 'NoteModal',
+        action: 'saveScreenshotAction'
+      },
+      {
+        key: 'escape',
+        module: 'NoteModal',
+        action: 'hideNoteAction'
       }
     ],
-    DirectMessages: {
-      fullscreen: true
-    },
-    Timeline: {
-      likeTooltip: {
-        like: 'Smash',
-        unlike: 'Unsmash'
+    NoteModal: {
+      testflag: true,
+      devmode: false,
+      notemodal: {
       },
-      // likeEmoji: {
-      //   liked: '\\1F63B',
-      //   unliked: '\\1F63A'
-      // }
+      as4_backend_url: 'https://ec2-54-172-138-52.compute-1.amazonaws.com/save_note/',
+      as4_local_url: 'http://127.0.0.1:5000/save_note/'
     }
   })
 };

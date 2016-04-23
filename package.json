@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "JSONStream": "^1.1.1",
+    "dropbox": "^0.10.3",
     "jquery": "^2.1.4",
     "jss-browserify": "^0.6.0",
     "lodash": "^3.10.1",

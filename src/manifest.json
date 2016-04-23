@@ -9,8 +9,8 @@
     "run_at": "document_start"
   }],
   "icons": {
-    "48": "assets/images/icon48.png",
-    "128": "assets/images/icon128.png"
+    "48": "assets/images/as4icon48.png",
+    "128": "assets/images/as4icon128.png"
  },
  "web_accessible_resources": [
      "assets/images/star-filled.png",
