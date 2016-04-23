@@ -115,7 +115,8 @@ var NoteModal = Modules.create('NoteModal', {
                     e.preventDefault();
                     var domain_name = window.location.hostname;
                     var img_src=$(this).attr('src');
-                    if (img_src.substring(0, 5) != 'http') {
+                    console.log('substring: ' + img_src.substring(0, 4));
+                    if (img_src.substring(0, 4) != 'http') {
                         if (img_src[0] != '/') {
                             img_src = '/' + img_src;
                         }
